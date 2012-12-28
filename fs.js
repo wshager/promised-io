@@ -162,6 +162,11 @@ exports.open = function(path, mode){
 	return File(nodeOpen.apply(this, arguments));
 };
 
+nodeExists = exports.exists;
+exports.exists = function(path){
+	return File(nodeExists.apply(this, arguments));
+};
+
 exports.makeDirectory = exports.mkdirSync;
 
 exports.makeTree = function(path){
